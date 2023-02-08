@@ -1,0 +1,86 @@
+.card{
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+position: relative;
+height: 45rem;
+
+&__side{
+
+    font-size: 2rem;
+    height: 45rem;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+
+    &--front {background-color: $color-white; }
+ 
+    &--back{ transform: rotateY(180deg);       
+              &-1{ background-image: linear-gradient(to right bottom ,
+            
+                $color-secondary-light, $color-secondary-dark);}
+}
+}
+  &:hover &__side--front {transform: rotateY(-180deg);}
+
+  &:hover &__side--back {transform: rotateY(0);}
+
+// STYLING FRONT SIDE OF CARD
+
+&__picture{
+background-size: cover;
+height: 23rem;
+background-blend-mode: screen;
+clip-path: polygon(0,0 100%,0 , 100% 85% ,0     100% );
+
+
+
+
+    &--1{
+        background-image: linear-gradient(to right bottom , 
+        $color-secondary-light, $color-secondary-dark), url(/images/CARD1.jfif);
+    }
+
+    &--2{
+        background-image: url(/images/CARD1.jfif);
+    }
+
+    &--3{
+        background-image: url(/images/CARD1.jfif);
+    }
+}
+
+
+// card heading
+
+&__heading{
+    font-size: 2.8rem;
+ font-weight: 300;
+ text-transform: uppercase ;
+ color: $color-white;
+ position: absolute;
+ text-align: right;
+ top: 14rem;
+ right: 2rem;
+ width: 75%;
+
+
+}
+
+ &__heading-span{
+    padding: 1rem 1.5rem ;
+    box-decoration-break: clone;
+    &--1{
+        background-image: linear-gradient(to right bottom ,
+         ($color-secondary-light 0.84),
+         ($color-secondary-dark , 0.85));
+    }
+ }
+
+
+
+}
